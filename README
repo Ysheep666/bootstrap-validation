@@ -1,0 +1,12 @@
+使用方法
+
+首先需要引入jQuery和Bootstrap库，然后在Js代码中加入下面一行代码。$('#form')为jQuery选中你需要验证的DOM元素。
+
+$('#form').validation();
+最后只需要在html代码中指定相关的属性即可如：
+
+<input type="text" class="input-xlarge" id="name" name="name" check-type="required" required-message="名称不能为空。" />
+<input type="text" class="input-xlarge" id="tel" name="tel" check-type="number" number-message="电话号码只能为数字。" />
+其中check-type为需要验证的规则，可以绑定多个规则，之间用分号隔开。
+
+其中required-message为验证为通过显示的信息，在这里required-message的'-'之前为前面定义的验证规则名称。

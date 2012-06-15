@@ -1,7 +1,7 @@
 /* =========================================================
  * bootstrap-validation.js 
  * Original Idea: http:/www.newkou.org (Copyright 2012 Stefan Petre)
- * Updated by 不会飞的羊 (https://github.com/FateSheep/bootstrap-validation)
+ * Updated by 不会飞的羊 (https://github.com/FateSheep/Validation-for-Bootstrap)
  * =========================================================
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
