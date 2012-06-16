@@ -34,7 +34,7 @@
         ]
     };
 
-    var formState = false, wFocus = false, globalOptions = {};
+    var formState = false, fieldState = false, wFocus = false, globalOptions = {};
 
     var validateField = function(field, valid) { // 验证字段
         var el = $(field), error = false, errorMsg = '';
@@ -74,15 +74,22 @@
                 controlGroup.addClass('error');
             }
         } else {
-            if (errorEl.length > 0) {
-                var help = controls.data('help-message');
-                if (help == undefined) {
-                    errorEl.remove();
-                } else {
-                    errorEl.text(help);
+            if (fieldState) {
+                if (errorEl.length > 0) {
+                    var help = controls.data('help-message');
+                    if (help == undefined) {
+                        errorEl.remove();
+                    } else {
+                        errorEl.text(help);
+                    }
+                }
+                controlGroup.attr('class','control-group');
+            } else {
+                if (errorEl.length > 0) {
+                    var help = errorEl.text();
+                    controls.data('help-message', help);
                 }
             }
-            controlGroup.attr('class','control-group');
         }
         return !error;
     };
@@ -99,7 +106,7 @@
                 if (valid != null && valid.length > 0) {
                     if (!validateField(this, valid)) {
                         if (wFocus == false) {
-                            scrollTo(0, el[0].offsetTop - 20);
+                            scrollTo(0, el[0].offsetTop - 50);
                             wFocus = true;
                         }
 
@@ -109,6 +116,7 @@
             });
 
             wFocus = false;
+            fieldState = true;
 
             if (validationError) {
                 formState = false; 
