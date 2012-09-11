@@ -1,12 +1,9 @@
 首先需要引入 jQuery 和 Bootstrap 库，然后在Js代码中加入下面一行代码。
 
-```javascript
 $('#form').validation();
-```
 
-`$('#form')` 为jQuery选中你需要验证的 dom 元素，最后只需要在html代码中指定相关的属性即可。
+$('#form') 为jQuery选中你需要验证的 dom 元素，最后只需要在html代码中指定相关的属性即可。
 
-```javascript
 <form class="form-horizontal">
 	<div class="control-group">
 		<label class="control-label" for="inputEmail">邮箱</label>
@@ -26,7 +23,6 @@ $('#form').validation();
 		</div>
 	</div>
 </form>
-```
 
 其中 check-type 为需要验证的规则，可以绑定多个规则，之间用空格隔开。
 
