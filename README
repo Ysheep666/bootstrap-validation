@@ -1,3 +1,3 @@
 首先需要引入 jQuery 和 Bootstrap 库，然后绑定需要验证的表单 $('#form').validation()，最后只需要在html代码中指定相关的属性即可。
 
-<a href="http://fatesheep.github.com/Validation-for-Bootstrap/">Validation-for-Bootstrap</a>
+[Validation-for-Bootstrap](http://fatesheep.github.com/Validation-for-Bootstrap/)
