@@ -1,12 +1,29 @@
-使用方法
+首先需要引入 jQuery 和 Bootstrap 库，然后在Js代码中加入下面一行代码。
 
-首先需要引入jQuery和Bootstrap库，然后在Js代码中加入下面一行代码。$('#form')为jQuery选中你需要验证的DOM元素。
+	$('#form').validation();
 
-$('#form').validation();
-最后只需要在html代码中指定相关的属性即可如：
+`$('#form')` 为jQuery选中你需要验证的 dom 元素，最后只需要在html代码中指定相关的属性即可。
 
-<input type="text" class="input-xlarge" id="name" name="name" check-type="required" required-message="名称不能为空。" />
-<input type="text" class="input-xlarge" id="tel" name="tel" check-type="number" number-message="电话号码只能为数字。" />
-其中check-type为需要验证的规则，可以绑定多个规则，之间用空格隔开。
+	<form class="form-horizontal">
+		<div class="control-group">
+			<label class="control-label" for="inputEmail">邮箱</label>
+			<div class="controls">
+				<input type="text" id="inputEmail" check-type="mail" mail-message="邮箱格式不正确！" >
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="inputPassword">密码</label>
+			<div class="controls">
+				<input type="password" id="inputPassword" check-type="required" required-message="密码不能为空！" >
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<button type="submit" class="btn">登录</button>
+			</div>
+		</div>
+	</form>
 
-其中required-message为验证为通过显示的信息，在这里required-message的'-'之前为前面定义的验证规则名称。
+其中 check-type 为需要验证的规则，可以绑定多个规则，之间用空格隔开。
+
+其中 required-message 为验证为通过显示的信息，在这里 required-message 的'-'之前为前面定义的验证规则名称。
